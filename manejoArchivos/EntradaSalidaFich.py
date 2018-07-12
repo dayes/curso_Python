@@ -26,5 +26,5 @@ if __name__ == "__main__":
             archivo.guardar()
             print("Contenido"+str(i)+".txt")
             print(texto[i*cadaParte:(i+1)*cadaParte])
-            i += 1
+            i += 3
 
