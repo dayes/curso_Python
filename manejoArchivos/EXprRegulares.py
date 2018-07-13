@@ -1,7 +1,8 @@
 import re
 
 def validarMatricula(matricula):
-    patron = "[0-9]{4}[A-Z]{3}"
+    patron = "^([0-9]{4}[A-Z]{3})$"
+    
     if re.match (patron,matricula):
         return True
     else:
