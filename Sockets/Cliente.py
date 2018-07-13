@@ -1,13 +1,16 @@
+
+import sys
+import codecs
 import socket
+nombreFich = sys.path[0] + "/Contenido.txt"
 s = socket.socket() 
 s.connect(("localhost", 9999))
+
+
 while True:
-    mensaje = input("> ") 
-    s.send(mensaje.encode("utf-8")) 
-    recibido = s.recv(1024) 
-    recibido=recibido.decode("utf-8") 
-    if mensaje == "quit":
-        break
-print ("Recibido:", recibido ) 
+    with codecs.open(nombreFich, "r",encoding='utf-8', errors='ignore') as fdata:
+        texto = fdata.read()
+        s.send(texto.encode("utf-8")) 
+    break
 print ("adios")
 s.close()
